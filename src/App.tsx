@@ -186,9 +186,8 @@ const App: React.FC = () => {
               </h2>
               <p className="mb-4 text-3xl">
               I've dedicated my career to finding the vulnerabilities that others miss. My journey began with CTF competitions and evolved into a full-time commitment to making digital spaces more secure.
-              </p>
-              <p className="text-xl">
-             My approach combines creative problem-solving with rigorous methodology, ensuring no stone is left unturned in the pursuit of robust security.
+                           My approach combines creative problem-solving with rigorous methodology, ensuring no stone is left unturned in the pursuit of robust security.
+
               </p>
               <a 
                 href="/assets/images/Ravi%20ranjan%20sah.pdf" 
