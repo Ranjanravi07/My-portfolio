@@ -1,4 +1,4 @@
-# HAK3R Free Portfolio Website
+# Ranjan Ravi Portfolio Website
 
 A modern, responsive portfolio template built specifically for cybersecurity professionals. Built with React, TypeScript, and Flowbite React components, it offers a sleek design with light/dark mode support.
 
@@ -7,22 +7,11 @@ A modern, responsive portfolio template built specifically for cybersecurity pro
 
 ## 💻 Screenshot 
 
-![Image](D:\virtual machine\portfilo\My-portfolio\public\assets\images\Screenshot 2026-07-21 132132.png)
+<p align="center">
+<img src="D:\virtual machine\portfilo\My-portfolio\public\assets\images\Screenshot 2026-07-21 132132.png" width="700">
+</p>
 
-## 🚀 Video Demo
 
-https://github.com/user-attachments/assets/d1416b79-ef4a-4b08-9887-6003180a8667
-
-## ✨ Features
-
-- **Responsive Design:** Fully responsive layout that works on all devices
-- **Dark/Light Mode:** System-aware theme that respects user preferences
-- **Modern Stack:** Built with React 18, TypeScript, and Vite
-- **Optimized Build:** Production-ready with static file exports
-- **Component Library:** Leverages Flowbite React for consistent UI
-- **Performance Focused:** Fast page loads and smooth animations
-- **SEO Ready:** Includes meta tags and OpenGraph support
-- **Easy Customization:** Well-organized codebase for easy modifications
 
 ## 🛠️ Tech Stack
 
@@ -37,8 +26,8 @@ https://github.com/user-attachments/assets/d1416b79-ef4a-4b08-9887-6003180a8667
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Dan-Duran/hak3r.git
-cd hak3r
+git clone https://github.com/Ranjanravi07/My-portfolio.git
+cd My-portfolio
 ```
 
 2. Install dependencies:
@@ -66,7 +55,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-hak3r/
+My-portfolio/
 ├── public/
 │   └── assets/
 │       ├── css/
@@ -111,10 +100,4 @@ The site can be deployed to any static hosting service. The production build out
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
 
-**Dan Duran** - [GetCyber](https://getcyber.me)
-
----
-
-Made with ❤️ by GetCyber
