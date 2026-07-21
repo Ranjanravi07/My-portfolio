@@ -8,7 +8,7 @@ A modern, responsive portfolio template built specifically for cybersecurity pro
 ## 💻 Screenshot 
 
 <p align="center">
-<img src="D:\virtual machine\portfilo\My-portfolio\public\assets\images\Screenshot 2026-07-21 132132.png" width="700">
+<img src="public\assets\images\Screenshot 2026-07-21 132132.png" width="700">
 </p>
 
 
