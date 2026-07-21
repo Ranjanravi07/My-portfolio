@@ -2,19 +2,12 @@
 
 A modern, responsive portfolio template built specifically for cybersecurity professionals. Built with React, TypeScript, and Flowbite React components, it offers a sleek design with light/dark mode support.
 
-## 💪 Join me! 
-- **👉 Subscribe to my YouTube Channel [GetCyber - YouTube](https://youtube.com/getCyber)**
-- **👉 Checkout some more awesome tools at [GetCyber](https://getcyber.me/tools)**
-- **👉 Discord Server [GetCyber - Discord](https://discord.gg/YUf3VpDeNH)**
 
 ---
-## 📺 Tutorial
-
-[![Video Demo](https://img.youtube.com/vi/DQ3S2x1zbzk/0.jpg)](https://youtu.be/DQ3S2x1zbzk)
 
 ## 💻 Screenshot 
 
-![Image](https://github.com/user-attachments/assets/faabb4d6-e21f-4b46-9959-342c3d00b40f)
+![Image](D:\virtual machine\portfilo\My-portfolio\public\assets\images\Screenshot 2026-07-21 132132.png)
 
 ## 🚀 Video Demo
 
