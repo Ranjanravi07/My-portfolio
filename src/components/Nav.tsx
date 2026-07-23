@@ -115,16 +115,13 @@ const Nav: React.FC = () => {
           className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
         >
           {isDarkTheme ? (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M10 2a1 1 0 011 1v1.1a6.03 6.03 0 016.9 6.9H19a1 1 0 110 2h-1.1A6.03 6.03 0 0111 18.9V20a1 1 0 11-2 0v-1.1A6.03 6.03 0 014.1 12H3a1 1 0 110-2h1.1A6.03 6.03 0 019 5.1V4a1 1 0 011-1zm-1 4.3a4.03 4.03 0 104.03 4.03A4.03 4.03 0 009 6.3z"
-                clipRule="evenodd"
-              />
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.8" />
+              <path d="M12 2.75V5M12 19v2.25M21.25 12H19M5 12H2.75M18.35 5.65l-1.6 1.6M7.25 16.75l-1.6 1.6M18.35 18.35l-1.6-1.6M7.25 7.25 5.65 5.65" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
           ) : (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20.5 15.2A8.5 8.5 0 0 1 8.8 3.5a8.5 8.5 0 1 0 11.7 11.7Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           )}
         </button>
