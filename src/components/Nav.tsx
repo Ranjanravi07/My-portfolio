@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "flowbite-react";
-import { DarkThemeToggle } from "flowbite-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Nav: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const syncThemePreference = () => {
+      const hasManualThemeOverride = localStorage.getItem("portfolio-theme-user-set") === "true";
       const savedTheme =
         localStorage.getItem("flowbite-theme-mode") ??
         localStorage.getItem("color-theme");
-      const useDarkTheme =
-        savedTheme === "dark"
-          ? true
-          : savedTheme === "light"
+      const useDarkTheme = hasManualThemeOverride
+        ? savedTheme === "light"
           ? false
-          : true;
+          : true
+        : true;
+
+      setIsDarkTheme(useDarkTheme);
       document.documentElement.classList.toggle("dark", useDarkTheme);
     };
 
@@ -69,6 +71,15 @@ const Nav: React.FC = () => {
     }
   };
 
+  const toggleTheme = () => {
+    const nextDarkTheme = !isDarkTheme;
+    localStorage.setItem("portfolio-theme-user-set", "true");
+    localStorage.setItem("flowbite-theme-mode", nextDarkTheme ? "dark" : "light");
+    localStorage.setItem("color-theme", nextDarkTheme ? "dark" : "light");
+    setIsDarkTheme(nextDarkTheme);
+    document.documentElement.classList.toggle("dark", nextDarkTheme);
+  };
+
   return (
     <Navbar
       className={`fixed w-full transition-all duration-300 ${
@@ -97,7 +108,26 @@ const Nav: React.FC = () => {
 
       {/* Right side controls */}
       <div className="flex md:order-2 items-center ml-auto gap-2 md:gap-0">
-        <DarkThemeToggle />
+        <button
+          type="button"
+          onClick={toggleTheme}
+          aria-label={isDarkTheme ? "Switch to light mode" : "Switch to dark mode"}
+          className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white transition-all duration-300"
+        >
+          {isDarkTheme ? (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path
+                fillRule="evenodd"
+                d="M10 2a1 1 0 011 1v1.1a6.03 6.03 0 016.9 6.9H19a1 1 0 110 2h-1.1A6.03 6.03 0 0111 18.9V20a1 1 0 11-2 0v-1.1A6.03 6.03 0 014.1 12H3a1 1 0 110-2h1.1A6.03 6.03 0 019 5.1V4a1 1 0 011-1zm-1 4.3a4.03 4.03 0 104.03 4.03A4.03 4.03 0 009 6.3z"
+                clipRule="evenodd"
+              />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          )}
+        </button>
 
         {/* Mobile project shortcut icon */}
         <Link

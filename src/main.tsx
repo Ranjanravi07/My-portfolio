@@ -6,13 +6,14 @@ import Projects from "./pages/Projects.tsx";
 import "./index.css";
 
 const getInitialThemeMode = () => {
+  const hasManualThemeOverride = localStorage.getItem('portfolio-theme-user-set') === 'true';
   const savedThemeMode = localStorage.getItem('flowbite-theme-mode') ?? localStorage.getItem('color-theme');
 
-  if (savedThemeMode === 'light') {
+  if (hasManualThemeOverride && savedThemeMode === 'light') {
     return false;
   }
 
-  if (savedThemeMode === 'dark') {
+  if (hasManualThemeOverride && savedThemeMode === 'dark') {
     return true;
   }
 
