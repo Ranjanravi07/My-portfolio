@@ -80,7 +80,7 @@ const Nav: React.FC = () => {
       fluid
     >
       {/* Brand */}
-      <Navbar.Brand href="/">
+      <Navbar.Brand href="/" className="flex items-center gap-2 mr-0">
         <div className="avatar-wrapper">
           <img
             src="/assets/images/ravi%20ranjan.jpg"
@@ -88,7 +88,7 @@ const Nav: React.FC = () => {
           />
         </div>
         <span
-          className={`self-center whitespace-nowrap font-bold dark:text-white transition-all duration-300 ml-2 ${
+          className={`self-center whitespace-nowrap font-bold dark:text-white transition-all duration-300 ${
             isScrolled ? "text-base md:text-lg" : "text-lg md:text-2xl"
           }`}
         >
@@ -97,8 +97,29 @@ const Nav: React.FC = () => {
       </Navbar.Brand>
 
       {/* Right side controls */}
-      <div className="flex md:order-2 items-center ml-auto">
+      <div className="flex md:order-2 items-center ml-auto gap-2 md:gap-0">
         <DarkThemeToggle />
+
+        {/* Mobile project shortcut icon */}
+        <Link
+          to="/projects"
+          aria-label="Open projects"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white transition-all duration-300"
+        >
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fillRule="evenodd"
+              d="M2 6a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2h-4a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h4a2 2 0 012 2v2a2 2 0 01-2 2h-4a2 2 0 01-2-2v-2z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Link>
 
         {/* My Project — hidden on mobile, visible on desktop */}
         <Link
@@ -135,11 +156,11 @@ const Nav: React.FC = () => {
         </button>
 
         {/* Flowbite hamburger toggle — hidden on desktop, visible on mobile */}
-        <Navbar.Toggle />
+        <Navbar.Toggle className="ml-1" />
       </div>
 
       {/* Nav links — inline on desktop (md+), inside hamburger on mobile */}
-      <Navbar.Collapse>
+      <Navbar.Collapse className="md:flex md:items-center md:justify-center md:order-1 md:flex-1">
         {["home", "services", "about", "contact"].map((section) => (
           <button
             key={section}

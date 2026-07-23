@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
               My Projects
             </h1>
             <p className="mb-12 text-lg text-gray-600 dark:text-gray-400">
-              Here are some of my cybersecurity and development projects.
+              Here are some of my projects.
             </p>
             
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

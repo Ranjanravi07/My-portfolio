@@ -86,19 +86,19 @@ const App: React.FC = () => {
           <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-28 lg:px-6 border-4 border-solid border-green-700 bg-white dark:bg-black relative z-20">
           <dl className="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white">
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="6">0</span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Months of Experience</dd>
               </div>
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="1"></span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Projects Completed</dd>
               </div>
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="10">0</span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Skills Learned</dd>
@@ -317,7 +317,7 @@ const App: React.FC = () => {
               {" with me"}
             </p>
             
-            <div className="flex justify-center flex-wrap gap-4 sm:gap-8 md:gap-12">
+            <div className="flex justify-center gap-8 md:gap-12">
               {/* GitHub */}
               <a
                 href="https://github.com/Ranjanravi07"
