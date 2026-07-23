@@ -31,14 +31,10 @@
 
     <!-- CRITICAL: Theme initialization script - must run before any rendering -->
     <script>
-      // Immediately apply theme before any content renders to prevent FOUC
-        const savedTheme = localStorage.getItem('flowbite-theme-mode') ?? localStorage.getItem('color-theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        const useDarkTheme = savedTheme === 'dark' ? true :
-                           savedTheme === 'light' ? false :
-                           prefersDark;
-
+      (function() {
+        var savedTheme = localStorage.getItem('flowbite-theme-mode') || localStorage.getItem('color-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var useDarkTheme = savedTheme === 'dark' ? true : savedTheme === 'light' ? false : prefersDark;
         if (useDarkTheme) {
           document.documentElement.classList.add('dark');
         } else {

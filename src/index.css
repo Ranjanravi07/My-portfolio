@@ -65,8 +65,8 @@ html.dark {
 
 /* Container for the avatar */
 .avatar-container {
-  width: 380px;
-  height: 380px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   background-color: #38C946;
   overflow: hidden;
@@ -75,15 +75,23 @@ html.dark {
   justify-content: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 100px;
+  margin: 2rem auto 0 auto;
 }
 
-/* Responsive avatar container for mobile */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .avatar-container {
-    width: 220px;
-    height: 220px;
-    margin-left: 24px;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .avatar-container {
+    width: 380px;
+    height: 380px;
+    margin-left: 40px;
+    margin-top: 0;
   }
 }
 

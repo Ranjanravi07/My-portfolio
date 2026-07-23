@@ -29,7 +29,7 @@ const App: React.FC = () => {
         <div className="mr-auto place-self-center lg:col-span-7">
         <h1
             id="dynamicHeadline"
-            className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+            className="max-w-2xl mb-4 text-2xl sm:text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
           >
             Secure Your Future with{" "}
             <span id="dynamicWords" className="text-green-500 font-bold">
@@ -37,13 +37,14 @@ const App: React.FC = () => {
             </span>
           </h1>
 
-          <p className="max-w-2xl mb-6 font-bold text-gray-500 lg:mb-8 text-2xl dark:text-gray-400">
+          <p className="max-w-2xl mb-6 font-bold text-gray-500 lg:mb-8 text-base sm:text-lg lg:text-2xl dark:text-gray-400">
           From deep-dive penetration testing to proactive threat monitoring, I provide tailored solutions to secure your network and protect your business.
 
           </p>
+          <div className="flex flex-wrap gap-3 mt-2">
           <a
             href="#about"
-            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800"
           >
             More About Me
             <svg
@@ -61,10 +62,11 @@ const App: React.FC = () => {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center px-5 py-4 text-base font-medium text:3xl text-center text-gray-900 border-4 border-green-300  hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border-4 border-green-300 hover:bg-green-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-green-700 dark:hover:bg-green-700 dark:focus:ring-gray-800"
           >
             Contact Me!
           </a>
+          </div>
         </div>
         <div 
           id="hacker-logo" 
@@ -84,19 +86,19 @@ const App: React.FC = () => {
           <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-28 lg:px-6 border-4 border-solid border-green-700 bg-white dark:bg-black relative z-20">
           <dl className="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white">
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="6">0</span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Months of Experience</dd>
               </div>
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="1"></span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Projects Completed</dd>
               </div>
               <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
+                  <dt className="mb-2 text-2xl sm:text-3xl md:text-5xl font-extrabold">
                       <span data-counter-target="10">0</span>+
                   </dt>
                   <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Skills Learned</dd>
@@ -114,7 +116,7 @@ const App: React.FC = () => {
                 <h2 className="mb-4 text-4xl md:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Breaking Systems, Building Security
                 </h2>
-                <p className="text-gray-500 text-2xl dark:text-gray-400">
+                <p className="text-gray-500 text-base sm:text-lg lg:text-2xl dark:text-gray-400">
                 Specialized in uncovering critical security vulnerabilities through advanced penetration testing, helping organizations fortify their digital infrastructure before real threats emerge.
                 </p>
               </div>
@@ -181,10 +183,10 @@ const App: React.FC = () => {
           <section id="about" className="bg-white dark:bg-black pt-8">
           <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-8 lg:px-6">
             <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-              <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 About Me, Ranjan Ravi
               </h2>
-              <p className="mb-4 text-3xl">
+              <p className="mb-4 text-base sm:text-xl lg:text-2xl">
               I've dedicated my career to finding the vulnerabilities that others miss. My journey began with CTF competitions and evolved into a full-time commitment to making digital spaces more secure.
                            My approach combines creative problem-solving with rigorous methodology, ensuring no stone is left unturned in the pursuit of robust security.
 
@@ -231,7 +233,7 @@ const App: React.FC = () => {
           </div>
         </section>
         {/* #### CONTACT SECTION #### */}
-        <section id="contact" className="bg-white dark:bg-black transition-all duration-300 hover:scale-105">
+        <section id="contact" className="bg-white dark:bg-black">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 className="mb-4 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Your security is my priority
@@ -315,7 +317,7 @@ const App: React.FC = () => {
               {" with me"}
             </p>
             
-            <div className="flex justify-center gap-8 md:gap-12">
+            <div className="flex justify-center flex-wrap gap-4 sm:gap-8 md:gap-12">
               {/* GitHub */}
               <a
                 href="https://github.com/Ranjanravi07"
