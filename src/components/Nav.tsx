@@ -13,13 +13,12 @@ const Nav: React.FC = () => {
       const savedTheme =
         localStorage.getItem("flowbite-theme-mode") ??
         localStorage.getItem("color-theme");
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
       const useDarkTheme =
         savedTheme === "dark"
           ? true
           : savedTheme === "light"
           ? false
-          : mediaQuery.matches;
+          : true;
       document.documentElement.classList.toggle("dark", useDarkTheme);
     };
 

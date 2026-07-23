@@ -16,7 +16,7 @@ const getInitialThemeMode = () => {
     return true;
   }
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return true;
 };
 
 document.documentElement.classList.toggle('dark', getInitialThemeMode());

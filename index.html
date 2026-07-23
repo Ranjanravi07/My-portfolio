@@ -33,8 +33,7 @@
     <script>
       (function() {
         var savedTheme = localStorage.getItem('flowbite-theme-mode') || localStorage.getItem('color-theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var useDarkTheme = savedTheme === 'dark' ? true : savedTheme === 'light' ? false : prefersDark;
+        var useDarkTheme = savedTheme === 'dark' ? true : savedTheme === 'light' ? false : true;
         if (useDarkTheme) {
           document.documentElement.classList.add('dark');
         } else {
