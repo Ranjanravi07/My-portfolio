@@ -1,8 +1,66 @@
 // src/App.tsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
+const CounterStat: React.FC<{ target: number; label: string }> = ({ target, label }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const counterRef = React.useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const element = counterRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    let animationFrame = 0;
+    const duration = 1000;
+    const startTime = performance.now();
+
+    const updateCount = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * easedProgress);
+
+      setCount(value);
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(updateCount);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(updateCount);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, [hasAnimated, target]);
+
+  return (
+    <div ref={counterRef} className="flex flex-col items-center justify-center">
+      <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
+        <span>{count}</span>+
+      </dt>
+      <dd className="font-light text-lg text-gray-500 dark:text-gray-400">{label}</dd>
+    </div>
+  );
+};
 
 const App: React.FC = () => {
   return (
@@ -85,24 +143,9 @@ const App: React.FC = () => {
         <section className="bg-white dark:bg-black">
           <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-28 lg:px-6 border-4 border-solid border-green-700 bg-white dark:bg-black relative z-20">
           <dl className="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3 dark:text-white">
-              <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
-                      <span data-counter-target="6">0</span>+
-                  </dt>
-                  <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Months of Experience</dd>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
-                      <span data-counter-target="1"></span>+
-                  </dt>
-                  <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Projects Completed</dd>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                  <dt className="mb-2 text-3xl md:text-5xl font-extrabold">
-                      <span data-counter-target="10">0</span>+
-                  </dt>
-                  <dd className="font-light text-lg text-gray-500 dark:text-gray-400">Skills Learned</dd>
-              </div>
+              <CounterStat target={6} label="Months of Experience" />
+              <CounterStat target={1} label="Projects Completed" />
+              <CounterStat target={10} label="Skills Learned" />
           </dl>
                     </div>
                     

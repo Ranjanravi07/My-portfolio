@@ -59,26 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
             type();
         }
 
-        // Counter animation
-        function initCounters() {
-            const counters = document.querySelectorAll('[data-counter-target]');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-counter-target'));
-                if (!isNaN(target)) {
-                    let current = 0;
-                    const interval = setInterval(() => {
-                        if (current < target) {
-                            current += Math.ceil(target / 100);
-                            if (current > target) current = target;
-                            counter.textContent = current.toLocaleString();
-                        } else {
-                            clearInterval(interval);
-                        }
-                    }, 20);
-                }
-            });
-        }
-
         // Logo animation
         function initLogoAnimation() {
             const logo = document.getElementById('hacker-logo');
@@ -99,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // Start all animations in sequence
         initTypewriter();
         setTimeout(initLogoAnimation, 300);
-        setTimeout(initCounters, 1000);
     }
 
     // Start everything
