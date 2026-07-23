@@ -2,33 +2,103 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/* Base light mode styles */
+html {
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Base dark mode styles */
+html.dark {
+  background-color: black;
+}
+
+.dark body {
+  background-color: black;
+}
+
+.dark #root {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ========================================
+   DARK MODE SPECIFIC STYLES
+   ======================================== */
+
+/* Scrollbar styling for dark mode */
+.dark ::-webkit-scrollbar {
+  background-color: #1a1a1a;
+  width: 12px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background-color: #0a0a0a;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 6px;
+  border: 2px solid #0a0a0a;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
+}
+
+/* ========================================
+   AVATAR COMPONENT
+   ======================================== */
+
 /* Container for the avatar */
 .avatar-container {
   width: 380px;
   height: 380px;
   border-radius: 50%;
-  background-color: #38C946; /* Matches the vibrant green background */
+  background-color: #38C946;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow around circle */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: 100px;
+}
+
+/* Responsive avatar container for mobile */
+@media (max-width: 768px) {
+  .avatar-container {
+    width: 220px;
+    height: 220px;
+    margin-left: 24px;
+  }
 }
 
 /* Image styling inside the circle */
 .avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image fills the circle without distortion */
+  object-fit: cover;
   display: block;
 }
 
 /* Hover Effect */
 .avatar-container:hover {
   transform: scale(1.04);
-  box-shadow: 0 12px 25px rgba(56, 201, 70, 0.4); /* Green glow effect */
+  box-shadow: 0 12px 25px rgba(56, 201, 70, 0.4);
 }
 
 /* Avatar wrapper for navbar */
@@ -36,7 +106,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  overflow: hidden;       /* Clips any part of the image outside the circle */
+  overflow: hidden;
   display: inline-block;
 }
 
@@ -44,4 +114,43 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ========================================
+   FLOWBITE COMPONENT OVERRIDES
+   ======================================== */
+
+/* Dark mode fixes for Flowbite Navbar */
+.dark .flowbite-navbar {
+  background-color: black;
+}
+
+/* Mobile menu dark mode */
+.dark .flowbite-navbar-collapse {
+  background-color: black;
+}
+
+/* Ensure dropdowns work in dark mode */
+.dark [data-testid="flowbite-dropdown"] {
+  background-color: black;
+  border-color: #374151;
+}
+
+/* Dark theme toggle button styling */
+.dark-theme-toggle {
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Smooth transitions for all elements when theme changes */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
+}
+
+/* Disable transitions on page load to prevent flash */
+.no-transitions * {
+  transition: none !important;
 }

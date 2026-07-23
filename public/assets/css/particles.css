@@ -1,8 +1,7 @@
 .light {
     position: absolute;
     width: 0px;
-    opacity: .75;
-    background-color: black;
+    background-color: white;
     box-shadow: #1aff00 0px 0px 20px 2px;
     opacity: 0;
     top: 100vh;
@@ -10,6 +9,12 @@
     left: 0px;
     right: 0px;
     margin: auto;
+}
+
+/* In dark mode: keep particles visible, slightly stronger glow */
+.dark .light {
+    background-color: #00ff41;
+    box-shadow: #00ff41 0px 0px 28px 4px;
 }
 
 .x1{

@@ -3,33 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/assets/images/ravi%20ranjan.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
     <title>Ravi Ranjan Sah</title>
     <meta name="title" content="Ravi Ranjan Sah">
     <meta name="author" content="Ranjan Ravi">
-    
-  
-    
+
     <!-- Theme Color for browsers -->
     <meta name="theme-color" content="#16a34a">
     <meta name="msapplication-TileColor" content="#16a34a">
-    
+
     <!-- Additional Meta -->
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
     <meta name="generator" content="Vite">
-    
+
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Ravi Ranjan Sah">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/particles.css">
-    
+
+    <!-- CRITICAL: Theme initialization script - must run before any rendering -->
+    <script>
+      // Immediately apply theme before any content renders to prevent FOUC
+        const savedTheme = localStorage.getItem('flowbite-theme-mode') ?? localStorage.getItem('color-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const useDarkTheme = savedTheme === 'dark' ? true :
+                           savedTheme === 'light' ? false :
+                           prefersDark;
+
+        if (useDarkTheme) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
     <!-- Smooth Scroll -->
     <style>
-    html {
-      scroll-behavior: smooth;
-    }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Critical CSS to prevent FOUC */
+      html, body, #root {
+        background-color: white;
+        min-height: 100vh;
+      }
+
+      html.dark, html.dark body, html.dark #root {
+        background-color: black;
+      }
     </style>
   </head>
   <body>
@@ -38,5 +70,3 @@
     <script src="/assets/js/custom.js"></script>
   </body>
 </html>
-
-

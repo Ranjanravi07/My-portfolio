@@ -5,8 +5,32 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", flowbite.content()],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      sans: ['"Anonymous Pro"', 'monospace'],
+    extend: {
+      fontFamily: {
+        sans: ['"Anonymous Pro"', 'monospace'],
+      },
+      colors: {
+        // Custom dark mode colors for better consistency
+        dark: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#0a0a0a',
+        }
+      },
+      backgroundColor: {
+        // Explicit dark mode background colors
+        'dark-primary': '#000000',
+        'dark-secondary': '#0a0a0a',
+        'dark-tertiary': '#111827',
+      }
     },
   },
   plugins: [flowbite.plugin()],

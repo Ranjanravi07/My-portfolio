@@ -1,6 +1,10 @@
 // public/assets/js/custom.js
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Reset scroll position to top on page load
+    window.scrollTo(0, 0);
+    window.history.scrollRestoration = 'manual';
+
     // Initialize all animations
     function initializeAnimations() {
         // Typewriter functionality
